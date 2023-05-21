@@ -11,8 +11,7 @@ class ActivitiesController {
             attributes: ['activity_name', 'activity_description'],
           },
         ],
-        // TODO Session'dan gelecek
-        where: {user_id: 1},
+        where: {user_id: req.session.user_id},
       });
       res.render(`${path.join(__dirname, '../views/activities')}`, {
         activities: allActivities,
@@ -30,14 +29,12 @@ class ActivitiesController {
       const {activity_name, activity_description} = req.body;
 
       const activitiesResult = await db.Activities.create({
-        // TODO Session'dan gelecek
         activity_name,
         activity_description,
       });
 
       await db.UserActivities.create({
-        // TODO: id Session'dan gelecek
-        user_id: 1,
+        user_id: req.session.user_id,
         activity_id: activitiesResult.id,
         date: new Date(),
       });

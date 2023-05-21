@@ -58,11 +58,6 @@ class AuthController {
       req.session.token = token;
       req.session.isAdmin = findUser.isAdmin;
 
-      // return res.render(`${path.join(__dirname, '../views/userdashboard')}`, {
-      //   title: 'Login',
-      //   succes: '',
-      //   error: '',
-      // });
       res.redirect('/');
     } catch (error) {
       res.render(`${path.join(__dirname, '../views/error')}`, {

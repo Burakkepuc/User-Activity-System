@@ -2,6 +2,8 @@ import express from 'express';
 import fs from 'fs';
 import verifyToken from '../Helpers/verifyToken';
 import path from 'path';
+import db from '../../src/models/index.js';
+import activities from '../../src/models/activities';
 
 const app = express();
 
@@ -21,12 +23,14 @@ fs.readdir('./app/Routes', (err, files) => {
   }
 });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   const token = req.session.token;
   const isAdmin = req.session.isAdmin;
   if (token && isAdmin) {
+    const allUsers = await db.Users.findAll();
     res.render(`${path.join(__dirname, '../views/admindashboard')}`, {
       title: 'Admin Dashboard',
+      users: allUsers,
     });
   } else if (token && !isAdmin) {
     res.render(`${path.join(__dirname, '../views/userdashboard')}`, {
