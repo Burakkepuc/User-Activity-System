@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Activity System - Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <%- include('./partials/_navbar.ejs') %>
+
+    <div class="container">
+      <header class="mt-5">
+        <h1 class="display-2">User Activity System</h1>
+        <p class="lead">
+          Track and manage your activities, set goals, and stay motivated!
+        </p>
+      </header>
+
+      <section class="mt-5">
+        <h2 class="display-4">Why we use</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1106&q=80"
+                class="card-img-top"
+                alt="Card Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Track Your Activities</h5>
+                <p class="card-text">
+                  Easily track and monitor your daily activities, remember what
+                  did you do. Continue your works where you stay.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="card">
+              <img
+                src="https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                class="card-img-top"
+                alt="Card Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Set and Achieve Goals</h5>
+                <p class="card-text">
+                  Define your daily goals and track your progress towards
+                  achieving them. Stay motivated by monitoring your milestones
+                  and celebrating your accomplishments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <h2 class="display-4">About the User Activity System</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1518349619113-03114f06ac3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&fit=crop&w=800&q=40"
+              alt="About Image"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-lg-6">
+            <p class="lead">
+              The User Activity System is a comprehensive platform designed to
+              help individuals track and manage their daily work activities, set
+              goals, and maintain productivity. It provides a user-friendly
+              interface that allows you to record and monitor various types of
+              work-related tasks, projects, and deadlines.
+            </p>
+            <p class="lead">
+              With our system, you can easily track your progress, view detailed
+              statistics, and analyze your performance over time. Whether you
+              are a freelancer, remote worker, or project team member, our
+              platform offers the tools and resources you need to stay
+              organized, meet deadlines, and achieve professional success.
+            </p>
+            <a href="#" class="btn btn-lg btn-outline-dark">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <%- include('./partials/_footer.ejs') %>
+  </body>
+
+  <!-- html close tag is in footer!! -->
+</html>

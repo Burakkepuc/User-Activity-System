@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/_navbar.ejs') %>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Update Activity</h3>
+            </div>
+            <div class="card-body">
+              <form
+                method="POST"
+                action="/activities/update-activity/<%= activity.id %>"
+              >
+                <div class="mb-3">
+                  <label for="activity_name" class="form-label"
+                    >Activity Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="activity_name"
+                    name="activity_name"
+                    value="<%= activity.activity_name %>"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="activity_description" class="form-label"
+                    >Activity Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="activity_description"
+                    name="activity_description"
+                    rows="3"
+                  >
+<%= activity.activity_description %></textarea
+                  >
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Update Activity
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/_footer.ejs') %>
+  </body>
+</html>
