@@ -7,17 +7,6 @@ module.exports = {
       'Users',
       [
         {
-          name: 'Burak',
-          surname: 'Kepuc',
-          email: 'burak@test.com',
-          password:
-            '$2b$10$R64Is5mElDa26.cU/fIMiuCZoCrH3voDZrjGqQeyfA5/Y1cYzj7m6', // Deneme123
-          title_id: 1,
-          isAdmin: true,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
           name: 'John',
           surname: 'Doe',
           email: 'john@test.com',
@@ -32,7 +21,7 @@ module.exports = {
           name: 'Jane',
           surname: 'Doe',
           email: 'jane@test.com',
-          password: 'Deneme123',
+          password:  '$2b$10$R64Is5mElDa26.cU/fIMiuCZoCrH3voDZrjGqQeyfA5/Y1cYzj7m6', // Deneme123,
           title_id: 4,
           isAdmin: false,
           createdAt: new Date(),

@@ -36,6 +36,23 @@ class ValidateAuth {
       return {type: false, message: error.message};
     }
   }
+  static async validateForgetPassword(body) {
+    console.log(body);
+    try {
+      const validateForgetPasswordSchema = Joi.object({
+        password: Joi.string().min(6).max(30).required(),
+        user_id: Joi.string().required(),
+      });
+
+      const {error} = validateForgetPasswordSchema.validate(body);
+      if (error) {
+        return {type: false, message: error.details[0].message};
+      }
+      return {type: true};
+    } catch (error) {
+      return {type: false, message: error.message};
+    }
+  }
 }
 
 export default ValidateAuth;

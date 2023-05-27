@@ -1,6 +1,7 @@
 import express from 'express';
 import session from 'express-session';
 import index from '../app/Routes/index.js';
+import db from '../src/models/index.js';
 
 const app = express();
 const port = 3000;
@@ -15,6 +16,7 @@ app.use(
     cookie: {maxAge: 2 * 24 * 60 * 60 * 1000},
   })
 );
+
 
 app.use('/', index);
 

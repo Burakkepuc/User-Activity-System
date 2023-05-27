@@ -1,5 +1,5 @@
 import express from 'express';
-import DashboardController from '../Controllers/UserDashboard';
+import UserDashboardController from '../Controllers/UserDashboard';
 const router = express.Router();
-router.get('/', DashboardController.index);
+router.get('/', UserDashboardController.index);
 module.exports = router;
