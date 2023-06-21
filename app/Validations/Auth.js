@@ -37,7 +37,6 @@ class ValidateAuth {
     }
   }
   static async validateForgetPassword(body) {
-    console.log(body);
     try {
       const validateForgetPasswordSchema = Joi.object({
         password: Joi.string().min(6).max(30).required(),

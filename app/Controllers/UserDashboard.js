@@ -13,7 +13,6 @@ class UserDashboardController {
         });
       }
     } else {
-      console.log(1);
       const allUsers = await db.Users.findAll();
       res.render(`${path.join(__dirname,'../views/admindashboard')}`, {
         users: allUsers,

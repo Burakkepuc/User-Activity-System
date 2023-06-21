@@ -3,7 +3,9 @@ import path from 'path';
 
 class ActivitiesController {
   static async getAll(req, res) {
+
     try {
+      if(!req.session.isAdmin){
       const allActivities = await db.UserActivities.findAll({
         include: [
           {
@@ -17,6 +19,21 @@ class ActivitiesController {
         activities: allActivities,
         title: 'Activities',
       });
+      }else{
+      const allActivities = await db.UserActivities.findAll({
+        include: [
+          {
+            model: db.Activities,
+            attributes: ['activity_name', 'activity_description'],
+          },
+        ],
+      });
+      res.render(`${path.join(__dirname, '../views/activities')}`, {
+        activities: allActivities,
+        title: 'Activities',
+      });
+      }
+      
     } catch (error) {
       res.render(`${path.join(__dirname, '../views/404')}`, {
         title: '404',

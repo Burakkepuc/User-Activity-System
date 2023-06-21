@@ -136,23 +136,6 @@ class AuthController {
     }
   }
 
- 
-
-
-static async forgetPassword(req, res) {
-  try {
-     res.render(`${path.join(__dirname, '../views/forget-password')}`, {
-      success:'',
-      error: '',
-    title: 'Reset Password',
-  });
-  } catch (error) {
-    res.render(`${path.join(__dirname, '../views/404')}`, {
-      title: '404',
-    });
-  }   
-  }
-
    static async sendResetPasswordMail(name, email, token) {
   try {
     const transporter = nodemailer.createTransport({
@@ -188,6 +171,24 @@ static async forgetPassword(req, res) {
     });
   }
 }
+
+ 
+
+
+static async forgetPassword(req, res) {
+  try {
+     res.render(`${path.join(__dirname, '../views/forget-password')}`, {
+      success:'',
+      error: '',
+    title: 'Reset Password',
+  });
+  } catch (error) {
+    res.render(`${path.join(__dirname, '../views/404')}`, {
+      title: '404',
+    });
+  }   
+  }
+
 
   static async forgetPasswordUser(req, res) {
     try {
@@ -249,10 +250,7 @@ static async forgetPassword(req, res) {
   static async resetPasswordUser(req, res) {
     try {
       const {password, user_id} = req.body;
-      console.log(typeof user_id);
       const validateResetPassword = await ValidateAuth.validateForgetPassword(req.body);
-      
-      console.log(validateResetPassword.type);
       if (!validateResetPassword.type) {
         return res.render(`${path.join(__dirname, '../views/reset-password')}`, {
           title: 'Reset Password',
